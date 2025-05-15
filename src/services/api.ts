@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://zerodha-backend-production.up.railway.app';
-const BASE_URL = 'http://localhost:4004';
+const BASE_URL = 'https://zerodha-backend-production.up.railway.app';
+// const BASE_URL = 'http://localhost:4004';
 
 async function fetchWithAuth(endpoint: string, options: RequestInit = {}) {
   const token = localStorage.getItem('kite_session_token');
