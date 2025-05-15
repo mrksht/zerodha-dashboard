@@ -9,6 +9,7 @@ import LoadingScreen from './components/LoadingScreen';
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const CallbackPage = lazy(() => import('./pages/CallbackPage'));
 const PortfolioPage = lazy(() => import('./pages/PortfolioPage'));
+const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 
 function App() {
   return (
@@ -25,6 +26,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <PortfolioPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/profile" 
+                element={
+                  <ProtectedRoute>
+                    <ProfilePage />
                   </ProtectedRoute>
                 } 
               />

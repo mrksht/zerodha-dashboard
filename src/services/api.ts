@@ -1,4 +1,5 @@
-const BASE_URL = 'https://zerodha-backend-production.up.railway.app';
+// const BASE_URL = 'https://zerodha-backend-production.up.railway.app';
+const BASE_URL = 'http://localhost:4004';
 
 async function fetchWithAuth(endpoint: string, options: RequestInit = {}) {
   const token = localStorage.getItem('kite_session_token');
@@ -58,8 +59,12 @@ export const authService = {
   },
 };
 
-export const portfolioService = {
+export const userService = {
   getPortfolio: async () => {
     return fetchWithAuth('/portfolio');
+  },
+
+  getProfile: async () => {
+    return fetchWithAuth('/profile');
   },
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowUp, ArrowDown, Info, Activity, Briefcase, DollarSign, AlertCircle, Loader2 } from 'lucide-react';
-import { portfolioService } from '../services/api';
+import { userService } from '../services/api';
 import PortfolioSummary from '../components/portfolio/PortfolioSummary';
 import HoldingsList from '../components/portfolio/HoldingsList';
 
@@ -31,7 +31,7 @@ const PortfolioPage = () => {
   useEffect(() => {
     const fetchPortfolio = async () => {
       try {
-        const data = await portfolioService.getPortfolio();
+        const data = await userService.getPortfolio();
         setPortfolioData(data);
       } catch (err) {
         console.error('Error fetching portfolio:', err);
